@@ -8,12 +8,12 @@
 
             {{-- Intestazione --}}
             <div class="d-flex justify-content-between mb-3 align-items-center">
-                <h1>Title</h1>
+                <h1>{{ $post->title }}</h1>
                 <button class="btn btn-secondary">Create new post</button>
             </div>
             {{-- FINE Intestazione --}}
 
-                
+                <p>{{ $post->content }}</p>
         </div>
     </div>
 </div>
