@@ -16,9 +16,10 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col" class="col-2">#</th>
-                    <th scope="col" class="col-8">Title</th>
-                    <th scope="col" class="col-2"></th>
+                    <th scope="col" class="col">#</th>
+                    <th scope="col" class="col-7">Title</th>
+                    <th scope="col" class="col-3">Slug</th>
+                    <th scope="col" class="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -26,7 +27,14 @@
                     <tr>
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
-                        <td>buttons</td>
+                        <td>{{ $post->slug }}</td>
+                        <td>
+                            <div>
+                                <a href="" as='button' class="btn btn-info"><i class="fas fa-magnifying-glass"></i></a>
+                                <a href="" as='button' class="btn btn-warning"><i class="fas fa-pencil"></i></a>
+                                <a href="" as='button' class="btn btn-danger"><i class="fas fa-trash-can"></i></a>
+                            </div>
+                        </td>
                       </tr>
                     @endforeach
                   
