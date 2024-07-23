@@ -37,10 +37,14 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->slug }}</td>
                         <td>
-                            <div>
-                                <a href="{{ route('admin.posts.show', $post) }}" as='button' class="btn btn-info"><i class="fas fa-magnifying-glass"></i></a>
-                                <a href="{{ route('admin.posts.edit', $post) }}" as='button' class="btn btn-warning"><i class="fas fa-pencil"></i></a>
-                                <a href="" as='button' class="btn btn-danger"><i class="fas fa-trash-can"></i></a>
+                            <div class="d-flex">
+                                <a href="{{ route('admin.posts.show', $post) }}" as='button' class="btn btn-info mx-1"><i class="fas fa-magnifying-glass"></i></a>
+                                <a href="{{ route('admin.posts.edit', $post) }}" as='button' class="btn btn-warning ms-1 me-2"><i class="fas fa-pencil"></i></a>
+                                <form action="{{ route('admin.posts.show', $post) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger"><i class="fas fa-trash-can"></i></button>
+                                </form>     
                             </div>
                         </td>
                       </tr>

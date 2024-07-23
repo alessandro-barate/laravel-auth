@@ -78,8 +78,11 @@ class PostController extends Controller
     {
         $data = $request->validated();
 
+        $data['slug'] = Str::of($data['title'])->slug();
+
         $post->title = $data['title'];
         $post->content = $data['content'];
+        $post->slug = $data['slug'];
 
         $post->save();
 
@@ -89,12 +92,11 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        $post = Post::findOrFail($id);
-
         $post->delete();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.posts.index')->with('message', 'Post correctly deleted');
+
     }
 }
