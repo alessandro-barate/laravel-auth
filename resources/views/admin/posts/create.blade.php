@@ -11,6 +11,31 @@
             </div>
             {{-- FINE Intestazione --}}
 
+            {{-- Form --}}
+            <form action="{{ route('admin.posts.store') }}" method="POST">
+                @csrf
+
+                <div class="mb-3">
+                    <label for="post-title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="post-title" name="title">
+                </div>
+
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" rows="6" name="content"></textarea>
+                    <label for="floatingTextarea">Content</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Create post</button>
+            </form>
+            {{-- FINE Form --}}
+
+            <hr>
+
+            {{-- Bottone all'index --}}
+            <div class="mt-5">
+                <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Back to the posts list</a>
+            </div>
+            {{-- FINE Bottone all'index --}}
+
         </div>
     </div>
 </div>
