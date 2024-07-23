@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -36,11 +37,19 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $data = $request->validated();
+
+        $slug = Str::of($data['title'])->slug('-');
+        $data['slug'] = $slug;
+
         $post = new Post();
-        $post->fill($data);
+
+        $post->title = $data['title'];
+        $post->content = $data['content'];
+        $post->slug = $data['slug'];
+
         $post->save();
 
-        return redirect()->route('posts.show', $post->id);
+        return redirect()->route('admin.posts.index')->with('message', 'Post correctly created');
     }
 
     /**

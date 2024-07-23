@@ -12,6 +12,14 @@
             </div>
             {{-- FINE Intestazione --}}
 
+            {{-- Messaggio di conferma creazione nuovo post --}}
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+            {{-- FINE Messaggio di conferma creazione nuovo post --}}
+
             {{-- Tabella --}}
             <table class="table">
                 <thead>

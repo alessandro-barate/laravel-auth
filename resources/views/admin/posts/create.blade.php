@@ -11,6 +11,10 @@
             </div>
             {{-- FINE Intestazione --}}
 
+            {{-- Gestione errori --}}
+            @include('shared.errors')
+            {{-- FINE Gestione errori --}}
+
             {{-- Form --}}
             <form action="{{ route('admin.posts.store') }}" method="POST">
                 @csrf
