@@ -8,7 +8,7 @@
             {{-- Intestazione --}}
             <div class="d-flex justify-content-between mb-3 align-items-center">
                 <h1>Posts list</h1>
-                <button class="btn btn-secondary">Create new post</button>
+                <a  as='button' class="btn btn-primary" href="{{ route('admin.posts.create') }}">Create new post</a>
             </div>
             {{-- FINE Intestazione --}}
 
