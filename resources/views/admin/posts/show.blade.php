@@ -9,11 +9,21 @@
             {{-- Intestazione --}}
             <div class="d-flex justify-content-between mb-3 align-items-center">
                 <h1>{{ $post->title }}</h1>
-                <button class="btn btn-secondary">Create new post</button>
+                {{-- <button class="btn btn-secondary">Create new post</button> --}}
             </div>
             {{-- FINE Intestazione --}}
 
+            {{-- Contenuto del post --}}
+            <div class="mb-4">
                 <p>{{ $post->content }}</p>
+            </div>
+            {{-- Contenuto del post --}}
+
+            <hr>
+
+            <div class="mt-5">
+                <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Back to the posts list</a>
+            </div>
         </div>
     </div>
 </div>

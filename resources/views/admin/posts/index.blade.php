@@ -30,7 +30,7 @@
                         <td>{{ $post->slug }}</td>
                         <td>
                             <div>
-                                <a href="{{ route('admin.posts.show', $post->id) }}" as='button' class="btn btn-info"><i class="fas fa-magnifying-glass"></i></a>
+                                <a href="{{ route('admin.posts.show', $post->slug) }}" as='button' class="btn btn-info"><i class="fas fa-magnifying-glass"></i></a>
                                 <a href="" as='button' class="btn btn-warning"><i class="fas fa-pencil"></i></a>
                                 <a href="" as='button' class="btn btn-danger"><i class="fas fa-trash-can"></i></a>
                             </div>
