@@ -62,7 +62,7 @@
                                                         <button type="submit" class="btn btn-primary">Delete</button>
                                                 </form>
 
-                                                {{-- TODO: Cancella correttamente i record tranne quelli creati da me --}}
+                                                {{-- TODO: Cancella alcuni record e altri no --}}
                                             </div>
                                         </div>
                                     </div>
