@@ -24,8 +24,15 @@ Route::middleware('auth', 'verified')
 ->name('admin.')
 ->prefix('admin')
 ->group(function () {
+
+    // Admin
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('posts', PostController::class);
+
+    // Post
+    // Parameters serve in questo caso per usare lo slug al posto dell'id
+    Route::resource('posts', PostController::class)->parameters([
+        'posts' => 'post:slug'
+    ]);
 });
 
 Route::middleware('auth')->group(function () {

@@ -46,9 +46,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $slug)
+    // public function show(string $slug)
+    public function show(Post $post)
     {
-       $post = Post::where('slug', $slug)->first();
+    //    $post = Post::where('slug', $slug)->first();
 
         return view('admin.posts.show', compact('post'));
     }
