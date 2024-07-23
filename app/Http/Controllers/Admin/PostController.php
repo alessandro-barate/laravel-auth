@@ -46,13 +46,11 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(string $slug)
     {
-        if ($post === null) {
-            return redirect()->route('errors.404 - Al momento non ci sono progetti da visualizzare');
-        }
+       $post = Post::where('slug', $slug)->first();
 
-        return view('posts.show', compact('post'));
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
