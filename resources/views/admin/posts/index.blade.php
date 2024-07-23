@@ -16,17 +16,20 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col"></th>
+                    <th scope="col" class="col-2">#</th>
+                    <th scope="col" class="col-8">Title</th>
+                    <th scope="col" class="col-2"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>title</td>
-                    <td>buttons</td>
-                  </tr>
+                    @foreach ($posts as $post)
+                    <tr>
+                        <th scope="row">{{ $post->id }}</th>
+                        <td>{{ $post->title }}</td>
+                        <td>buttons</td>
+                      </tr>
+                    @endforeach
+                  
                 </tbody>
               </table>
               {{-- FINE Tabella --}}
