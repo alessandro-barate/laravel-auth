@@ -25,8 +25,8 @@
                 <thead>
                   <tr>
                     <th scope="col" class="col">#</th>
-                    <th scope="col" class="col-7">Title</th>
-                    <th scope="col" class="col-3">Slug</th>
+                    <th scope="col" class="col-7">TITLE</th>
+                    <th scope="col" class="col-3">SLUG</th>
                     <th scope="col" class="col"></th>
                   </tr>
                 </thead>
@@ -39,7 +39,7 @@
                         <td>
                             <div>
                                 <a href="{{ route('admin.posts.show', $post) }}" as='button' class="btn btn-info"><i class="fas fa-magnifying-glass"></i></a>
-                                <a href="" as='button' class="btn btn-warning"><i class="fas fa-pencil"></i></a>
+                                <a href="{{ route('admin.posts.edit', $post) }}" as='button' class="btn btn-warning"><i class="fas fa-pencil"></i></a>
                                 <a href="" as='button' class="btn btn-danger"><i class="fas fa-trash-can"></i></a>
                             </div>
                         </td>
