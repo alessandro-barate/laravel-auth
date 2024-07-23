@@ -94,6 +94,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $post_id = $post->id;
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('message', 'Post correctly deleted');
