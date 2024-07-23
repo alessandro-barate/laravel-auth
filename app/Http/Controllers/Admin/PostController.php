@@ -16,8 +16,10 @@ class PostController extends Controller
     {
 
         $posts = Post::all();
+    
 
-        return view('admin.posts.index');
+        return view('admin.posts.index', compact('posts'));
+        
     }
 
     /**
