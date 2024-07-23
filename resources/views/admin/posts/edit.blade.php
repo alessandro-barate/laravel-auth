@@ -16,19 +16,20 @@
             {{-- FINE Gestione errori --}}
 
             {{-- Form --}}
-            <form action="{{ route('admin.posts.store') }}" method="POST">
+            <form action="{{ route('admin.posts.update', $post) }}" method="POST">
+                @method('PATCH')
                 @csrf
 
-                <div class="mb-3">
+                <div class="mb-5">
                     <label for="post-title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="post-title" name="title">
+                    <input type="text" class="form-control" id="post-title" name="title" value="{{ old('title', $post->title) }}">
                 </div>
 
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" rows="6" name="content"></textarea>
-                    <label for="floatingTextarea">Content</label>
+                <div class="mb-4">
+                    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" cols="100" name="content">{{ old('content', $post->content) }}</textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Create post</button>
+                <button type="submit" class="btn btn-primary">Update post</button>
             </form>
             {{-- FINE Form --}}
 

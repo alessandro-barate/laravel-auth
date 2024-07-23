@@ -68,24 +68,22 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        // $post = Post::findOrFail($id);
-
         return view('admin.posts.edit' , compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, string $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        // $post = Post::findOrFail($id);
-        // // $data = $this->validation($request->all());
-        // $data = $request->validated();
-        // $post->update($data);
-        // $post->title = $data['title'];
-        // $post->save();
+        $data = $request->validated();
 
-        // return redirect()->route('posts.show', $post->id);
+        $post->title = $data['title'];
+        $post->content = $data['content'];
+
+        $post->save();
+
+        return redirect()->route('admin.posts.index')->with('message', 'Post correctly updated');
     }
 
     /**
