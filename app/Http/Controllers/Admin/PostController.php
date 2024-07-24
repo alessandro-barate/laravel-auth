@@ -37,18 +37,24 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
+        // Validazione dei dati
         $data = $request->validated();
 
+        // Gestione immagine
+        $img_path = Storage::put('uploads', $data['cover_image']);
+
+        // Gestione slug
         $slug = Str::of($data['title'])->slug('-');
         $data['slug'] = $slug;
 
+        // Creo nuovo Post
         $post = new Post();
 
+        // Assegno valori
         $post->title = $data['title'];
         $post->content = $data['content'];
         $post->slug = $data['slug'];
-
-        $img_path = Storage::put('uploads', $data['image']);
+        $post->cover_image = $img_path;
 
         $post->save();
 

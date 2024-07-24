@@ -17,7 +17,11 @@
             <div class="mb-4">
                 <p>{{ $post->content }}</p>
             </div>
-            {{-- Contenuto del post --}}
+
+            <div>
+                <img src="{{ asset('storage/' . $post->cover_image) }}" alt="">
+            </div>
+            {{-- FINE Contenuto del post --}}
 
             <hr>
 
