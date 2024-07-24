@@ -41,7 +41,10 @@ class PostController extends Controller
         $data = $request->validated();
 
         // Gestione immagine
-        $img_path = Storage::put('uploads', $data['cover_image']);
+        $img_path = null;
+        if(isset($data['cover_image'])) {
+            $img_path = Storage::put('uploads', $data['cover_image']);
+        }
 
         // Gestione slug
         $slug = Str::of($data['title'])->slug('-');
