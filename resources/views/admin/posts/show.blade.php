@@ -18,7 +18,7 @@
                 <p>{{ $post->content }}</p>
             </div>
 
-            <div>
+            <div class="img-container">
                 <img src="{{ asset('storage/' . $post->cover_image) }}" alt="">
             </div>
             {{-- FINE Contenuto del post --}}

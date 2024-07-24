@@ -34,7 +34,9 @@
                     @foreach ($posts as $post)
                     <tr>
                         <th scope="row">{{ $post->id }}</th>
-                        <td>{{ $post->title }}</td>
+                        <td> @if ($post->cover_image)
+                            IMAGE 
+                        @endif{{ $post->title }}</td>
                         <td>{{ $post->slug }}</td>
                         <td>
                             <div class="d-flex">

@@ -9,8 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
-    // Qui i campi che vogiamo abilitare al mass update
-    protected $fillable = ['title', 'content', 'slug'];
+    // Qui i campi che vogliamo abilitare al mass update
+    protected $fillable = ['title', 'content', 'slug', 'cover_image'];
 
     // Qui i campi che non vogliamo abilitare al mass update
     // protected $guarded = [];
