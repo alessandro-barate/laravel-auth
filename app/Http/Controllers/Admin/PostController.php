@@ -84,7 +84,7 @@ class PostController extends Controller
         $post->content = $data['content'];
         $post->slug = $data['slug'];
 
-        $post->save();
+        $post->update($data);
 
         return redirect()->route('admin.posts.index')->with('message', $post->id .' - Post correctly updated');
     }
