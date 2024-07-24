@@ -89,6 +89,9 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
+
+        // TODO: Nell'upload, non mi sostituisce l'immagine
+
         // Validazione dei dati
         $data = $request->validated();
 
