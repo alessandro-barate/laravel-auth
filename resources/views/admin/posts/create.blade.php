@@ -32,7 +32,7 @@
                 <div class="mb-3">
                     <label for="cover_image" class="form-label">Cover image</label>
                     <input class="form-control" type="file" id="cover_image" name="cover_image">
-                  </div>
+                </div>
 
                 <button type="submit" class="btn btn-primary">Create post</button>
             </form>

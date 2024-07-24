@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -88,10 +89,26 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
+        // Validazione dei dati
         $data = $request->validated();
 
+        // Gestione slug
         $data['slug'] = Str::of($data['title'])->slug();
 
+        // Gestione immagine
+        if(isset($data['cover_image'])) {
+
+            // Cancello l'immagine se gia presente
+            if ($post->cover_image) {
+                Storage::delete($post->cover_image);      
+            }
+
+            // Salvo la nuova immagine
+            $img_path = Storage::put('uploads', $data['cover_image']);
+            $post->cover_image = $img_path;
+        }
+
+        // Assegno valori
         $post->title = $data['title'];
         $post->content = $data['content'];
         $post->slug = $data['slug'];

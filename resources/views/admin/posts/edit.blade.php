@@ -29,6 +29,12 @@
                     <label for="exampleFormControlTextarea1" class="form-label">Post content</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" cols="100" name="content">{{ old('content', $post->content) }}</textarea>
                 </div>
+
+                <div class="mb-3">
+                    <label for="cover_image" class="form-label">Cover image</label>
+                    <input class="form-control" type="file" id="cover_image" name="cover_image">
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Update post</button>
             </form>
             {{-- FINE Form --}}
