@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -46,6 +47,8 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->content = $data['content'];
         $post->slug = $data['slug'];
+
+        $img_path = Storage::put('uploads', $data['image']);
 
         $post->save();
 
