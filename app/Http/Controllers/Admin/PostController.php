@@ -86,7 +86,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('admin.posts.index')->with('message', 'Post correctly updated');
+        return redirect()->route('admin.posts.index')->with('message', $post->id .' - Post correctly updated');
     }
 
     /**
