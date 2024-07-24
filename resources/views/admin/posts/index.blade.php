@@ -35,7 +35,7 @@
                     <tr>
                         <th scope="row">{{ $post->id }}</th>
                         <td> @if ($post->cover_image)
-                            IMAGE 
+                            <i class="fas fa-image"> -</i> 
                         @endif{{ $post->title }}</td>
                         <td>{{ $post->slug }}</td>
                         <td>
