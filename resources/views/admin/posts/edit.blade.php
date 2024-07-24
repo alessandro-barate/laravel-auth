@@ -16,17 +16,17 @@
             {{-- FINE Gestione errori --}}
 
             {{-- Form --}}
-            <form action="{{ route('admin.posts.update', $post) }}" method="POST">
+            <form action="{{ route('admin.posts.update', $post) }}" method="POST" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf
 
                 <div class="mb-5">
-                    <label for="post-title" class="form-label">Title</label>
+                    <label for="post-title" class="form-label">Post title</label>
                     <input type="text" class="form-control" id="post-title" name="title" value="{{ old('title', $post->title) }}">
                 </div>
 
                 <div class="mb-4">
-                    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Post content</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" cols="100" name="content">{{ old('content', $post->content) }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Update post</button>

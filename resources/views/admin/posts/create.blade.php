@@ -16,18 +16,24 @@
             {{-- FINE Gestione errori --}}
 
             {{-- Form --}}
-            <form action="{{ route('admin.posts.store') }}" method="POST">
+            <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
-                    <label for="post-title" class="form-label">Title</label>
+                    <label for="post-title" class="form-label">Post title</label>
                     <input type="text" class="form-control" id="post-title" name="title">
                 </div>
 
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" rows="6" name="content"></textarea>
-                    <label for="floatingTextarea">Content</label>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Post content</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" cols="100" name="content"></textarea>
                 </div>
+
+                <div class="mb-3">
+                    <label for="cover_image" class="form-label">Cover image</label>
+                    <input class="form-control" type="file" id="cover_image" name="cover_image">
+                  </div>
+
                 <button type="submit" class="btn btn-primary">Create post</button>
             </form>
             {{-- FINE Form --}}
