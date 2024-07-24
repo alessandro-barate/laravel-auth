@@ -49,7 +49,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('admin.posts.index')->with('message', 'Post correctly created');
+        return redirect()->route('admin.posts.index')->with('message', 'Post correctly created - Post #'.$post->id);
     }
 
     /**
@@ -86,7 +86,7 @@ class PostController extends Controller
 
         $post->update($data);
 
-        return redirect()->route('admin.posts.index')->with('message', $post->id .' - Post correctly updated');
+        return redirect()->route('admin.posts.index')->with('message', 'Post #' .$post->id. ' correctly updated');
     }
 
     /**
@@ -97,7 +97,7 @@ class PostController extends Controller
         $post_id = $post->id;
         $post->delete();
 
-        return redirect()->route('admin.posts.index')->with('message', 'Post correctly deleted');
+        return redirect()->route('admin.posts.index')->with('message', 'Post #' .$post->id. ' correctly deleted');
 
     }
 }
